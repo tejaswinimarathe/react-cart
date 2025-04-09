@@ -6,3 +6,56 @@
   transform: scale(1.05); /* Slightly increase the size on hover */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
 }
+
+
+
+
+/* Default cart styles */
+.cart-container {
+  position: relative;
+}
+
+/* For mobile screens, the cart will be fixed at the center */
+@media (max-width: 768px) {
+  .cart-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it's on top */
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px; /* Optional: max width for larger screens */
+  }
+
+  .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  /* You can also add a close button to hide the cart */
+  .cart-container .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+/* Optional: styles for larger screens */
+@media (min-width: 769px) {
+  .cart-container {
+    display: none; /* Hide the cart on larger screens */
+  }
+}
